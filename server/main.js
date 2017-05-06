@@ -15,11 +15,11 @@ Meteor.startup(() => {
 		}
 	});
 	
-	if(!Meteor.users.find().count()) {
+	/*if(!Meteor.users.find().count()) {
 		var options = {
 			password: '111111', 
 			email: 'admin@minicrm.com'
 		};
 		Accounts.createUser(options);
-	}
+	}*/
 });
