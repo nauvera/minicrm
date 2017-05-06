@@ -1,0 +1,244 @@
+<head>
+  <title>minicrm</title>
+</head>
+
+<body>
+</body>
+
+<template name="home">
+	<div class="container">
+		{{> header}}
+		<div class="row main">
+			<div class="col-md-4">&nbsp;</div>
+			<div class="col-md-4">
+				<form class="login" method="post">
+					<div class="form-group">
+						<label for="loginemail">Email</label>
+						<input type="email" class="form-control" id="loginemail" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<label for="loginpassword">Password</label>
+						<input type="password" class="form-control" id="loginpassword" placeholder="Password">
+					</div>	
+					<button type="submit" class="btn btn-primary btn-lg active btn-block">Login</button>	
+				</form>    
+			</div>
+			<div class="col-md-4">&nbsp;</div>
+		</div>
+	</div>
+  
+  
+</template>
+
+<template name="userhome">
+	<div class="container" style="">
+		{{> header}}
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+				  <li role="presentation" class="active"><a href="/userhome">Dashboard</a></li>
+				  <li role="presentation"><a href="/templates">Templates</a></li>
+				  <li role="presentation"><a href="/emails">Emails</a></li>
+				  <li role="presentation"><a href="/recipients">Recipients</a></li>
+				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation"><a href="/users">Users</a></li>
+				  <li role="presentation"><a href="reports">Reports</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row main">
+			<div class="col-md-12">
+				<h1>Under Construction</h1>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="templates">
+	<div class="container">
+		{{> header}}
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
+				  <li role="presentation" class="active"><a href="/templates">Templates</a></li>
+				  <li role="presentation"><a href="/emails">Emails</a></li>
+				  <li role="presentation"><a href="/recipients">Recipients</a></li>
+				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation"><a href="/users">Users</a></li>
+				  <li role="presentation"><a href="reports">Reports</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row main">
+			<div class="col-md-12">
+				<h1>Under Construction</h1>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="emails">
+	<div class="container">
+		{{> header}}
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
+				  <li role="presentation"><a href="/templates">Templates</a></li>
+				  <li role="presentation" class="active"><a href="/emails">Emails</a></li>
+				  <li role="presentation"><a href="/recipients">Recipients</a></li>
+				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation"><a href="/users">Users</a></li>
+				  <li role="presentation"><a href="reports">Reports</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row main">
+			<div class="col-md-12">
+				<h1>Under Construction</h1>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="recipients">
+	<div class="container">
+		{{> header}}
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
+				  <li role="presentation"><a href="/templates">Templates</a></li>
+				  <li role="presentation"><a href="/emails">Emails</a></li>
+				  <li role="presentation" class="active"><a href="/recipients">Recipients</a></li>
+				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation"><a href="/users">Users</a></li>
+				  <li role="presentation"><a href="reports">Reports</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row main">
+			<div class="col-md-12">
+				<h1>Under Construction</h1>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="campaigns">
+	<div class="container">
+		{{> header}}
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
+				  <li role="presentation"><a href="/templates">Templates</a></li>
+				  <li role="presentation"><a href="/emails">Emails</a></li>
+				  <li role="presentation"><a href="/recipients">Recipients</a></li>
+				  <li role="presentation" class="active"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation"><a href="/users">Users</a></li>
+				  <li role="presentation"><a href="reports">Reports</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row main">
+			<div class="col-md-12">
+				<h1>Under Construction</h1>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+
+<template name="user_list">
+	<div class="container">
+		{{> header}}
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
+				  <li role="presentation"><a href="/templates">Templates</a></li>
+				  <li role="presentation"><a href="/emails">Emails</a></li>
+				  <li role="presentation"><a href="/recipients">Recipients</a></li>
+				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation" class="active"><a href="/users">Users</a></li>
+				  <li role="presentation"><a href="reports">Reports</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 15px">
+			<div class="col-md-2">&nbsp;</div>
+			<div class="col-md-8">
+
+				<form class="form-inline register" method="post">
+				  <div class="form-group">
+					<label for="emailR">Email</label>
+					<input type="email" class="form-control" id="emailR" placeholder="Email" name="emailN">
+				  </div>
+				  <div class="form-group">
+					<label for="passwordR">Password</label>
+					<input type="password" class="form-control" id="passwordR" placeholder="Password" name="passwordN">
+				  </div>
+				  <button type="submit" class="btn btn-primary">Register</button>
+				</form>
+
+			</div>
+			<div class="col-md-2">&nbsp;</div>
+		</div>
+		<div class="row main">
+			<div class="col-md-12">
+			  <table class="table table-hover">
+				<tbody>
+					{{#each allUsers}}
+						{{> user_item}}
+					{{/each}}
+				</tbody>
+			  </table>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="user_item">
+	<tr>	
+		<td>{{primaryEmail}}</td>
+		<td class="text-right">
+			{{#if dontDelete}}
+				<button type="button" class="btn btn-default btn-xs deleteUser" _id="{{_id}}" email="{{primaryEmail}}">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+				</button>
+			{{/if}}
+		</td>
+	</tr>
+</template>
+
+<template name="header">
+	{{#if currentUser}}
+		<div class="row header">
+			<div class="col-md-9">
+				<img src="https://res.cloudinary.com/dwu7u6zcs/image/upload/v1494028712/logo.png_tyv9ho.png" style="padding: 5px 0px 10px 0px"/>
+			</div>
+			<div class="col-md-3">
+				{{> menu}}
+			</div>
+		</div>
+	{{else}}
+		<div class="row header">
+			<div class="col-md-12">
+				<img src="https://res.cloudinary.com/dwu7u6zcs/image/upload/v1494028712/logo.png_tyv9ho.png" style="padding: 5px 0px 10px 0px"/>
+			</div>
+		</div>
+	{{/if}}
+</template>
+
+<template name="menu">
+	<p class="text-right">
+		<a href="#" class="logout">Logout</a>({{loggedInUserName}})
+	</p>
+</template>
+
+
