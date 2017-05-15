@@ -38,11 +38,3 @@ Router.route('/users', function () {
   this.render('user_list');
   }
 });
-
-Router.route('/reports', function () {
-  if (!Meteor.userId()) {
-  this.render('home');
-  } else {
-  this.render('reports');
-  }
-});
