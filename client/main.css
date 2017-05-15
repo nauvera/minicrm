@@ -24,4 +24,6 @@ body {
 .nav {
 	padding-top: 5px;
 }
+.bodycontainer { max-height: 700px; width: 100%; margin: 0; overflow-y: auto; }
+.table-scrollable { margin: 0; padding: 0; }
  

@@ -14,35 +14,19 @@ Router.route('/userhome', function () {
   }
 });
 
-Router.route('/templates', function () {
+Router.route('/createLists', function () {
   if (!Meteor.userId()) {
 	this.render('home');
   } else {
-	this.render('templates');
+	this.render('createLists');
   }
 });
 
-Router.route('/emails', function () {
+Router.route('/addNewCompany', function () {
   if (!Meteor.userId()) {
 	this.render('home');
   } else {
-	this.render('emails');
-  }
-});
-
-Router.route('/recipients', function () {
-  if (!Meteor.userId()) {
-	this.render('home');
-  } else {
-	this.render('recipients');
-  }
-});
-
-Router.route('/campaigns', function () {
-  if (!Meteor.userId()) {
-	this.render('home');
-  } else {
-	this.render('campaigns');
+	this.render('addNewCompany');
   }
 });
 

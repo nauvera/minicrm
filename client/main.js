@@ -4,6 +4,7 @@ import "../imports/ui/routes.js"
 	email: "admin@minicrm.com",
 	password: "111111"
 });*/
+companyCollection = new Mongo.Collection("company");
 
 
 Template.home.events({
@@ -78,5 +79,39 @@ Template.user_item.events({
 Template.menu.helpers({
 	loggedInUserName: function() {
 		return Meteor.user().emails[0].address;
+	}
+});
+
+Template.companies.onCreated(function() {
+	alert("Sorter");
+	$('#example').tablesorter();
+});
+
+
+Template.userhome.events({
+	'click .readFromFile': function(event) {
+			event.preventDefault();
+			Meteor.call("loadFile", function(error, result) {
+				if (error) {
+					alert(error);
+				} else {
+					alert("File loaded successfully");
+				}
+			});
+		}
+	}
+);
+
+Template.companies.helpers({
+	allCompanies: function() {
+		var handle = Meteor.subscribe('allCompanies');
+		var companies = [];
+		if (handle.ready()) {
+			var rawCompanies = companyCollection.find({}, {sort: {name: 1}}).fetch();
+			_.each(rawCompanies, function(company) {
+				companies.push(company);
+			});
+		}
+		return companies;
 	}
 });

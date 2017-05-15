@@ -36,57 +36,67 @@
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="nav nav-tabs">
-				  <li role="presentation" class="active"><a href="/userhome">Dashboard</a></li>
-				  <li role="presentation"><a href="/templates">Templates</a></li>
-				  <li role="presentation"><a href="/emails">Emails</a></li>
-				  <li role="presentation"><a href="/recipients">Recipients</a></li>
-				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation" class="active"><a href="/userhome">Home</a></li>
+				  <li role="presentation"><a href="/createLists">Create Lists</a></li>
+				  <li role="presentation"><a href="/addNewCompany">Add new company</a></li>
 				  <li role="presentation"><a href="/users">Users</a></li>
-				  <li role="presentation"><a href="reports">Reports</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="row" style="padding-top: 15px">
-			<div class="col-md-6">
-				<a href="#" class="thumbnail" style="border: 0px">
-					<img src="http://res.cloudinary.com/dwu7u6zcs/image/upload/v1494107849/cot_graph_py9biy.png"/>
-				</a>
-			</div>
-			<div class="col-md-6">
-				<a href="#" class="thumbnail" style="border: 0px">
-					<img src="http://res.cloudinary.com/dwu7u6zcs/image/upload/v1494109188/cot_graph_povols.png"/>
-				</a>
-			</div>
-		</div>
-		<div class="row" style="padding-top: 15px">
-			<div class="col-md-6">
-				<a href="#" class="thumbnail" style="border: 0px">
-					<img src="http://res.cloudinary.com/dwu7u6zcs/image/upload/v1494109798/cot_graph_frkyvh.png"/>
-				</a>
-			</div>
-			<div class="col-md-6">
-				<a href="#" class="thumbnail" style="border: 0px">
-					<img src="http://res.cloudinary.com/dwu7u6zcs/image/upload/v1494109947/cot_graph_n34x4q.png"/>
-				</a>
+			<div class="col-md-12 bodycontainer scrollable">
+				<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+					<thead>
+						<tr><th>Name</th><th>Telephone</th><th>Email</th><th>Industry</th><th>Status</th><th>Contact</th><th>select</th></tr>
+					</thead>
+					<tfoot>
+						<tr><th>Name</th><th>Telephone</th><th>Email</th><th>Industry</th><th>Status</th><th>Contact</th><th>select</th></tr>
+					</tfoot>
+					<tbody>
+						{{> companies}}
+					</tbody>
+				</table>
 			</div>
 		</div>
+			<div class="row" style="margin-top: 15px;margin-bottom: 15px">
+				<div class="col-md-2">
+					<a class="btn btn-primary" href="/addNewCompany?origin=userhome" role="button">Add Company</a>				
+				</div>
+				<div class="col-md-2">
+					<a class="btn btn-danger" href="#" role="button">Delete</a>				
+				</div>
+				<div class="col-md-8">
+				</div>
+			</div>
+			<div class="row" style="margin-bottom: 15px">
+				<div class="col-md-2">
+					<a class="btn btn-primary" href="#" role="button">Edit Information</a>				
+				</div>
+				<div class="col-md-2">
+					<a class="btn btn-primary readFromFile" href="#" role="button">Read from file</a>				
+				</div>
+				<div class="col-md-8">
+				</div>
+			</div>
 	</div>
 </template>
 
+<template name="companies">
+	{{#each allCompanies}}
+		<tr><td>{{name}}</td><td>{{telephone}}</td><td>{{email}}</td><td>{{industry}}</td><td>{{status}}</td><td>{{contact}}</td><td><input type="checkbox"></td></tr>
+	{{/each}}
+</template>
 
-<template name="templates">
+<template name="createLists">
 	<div class="container">
 		{{> header}}
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="nav nav-tabs">
-				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
-				  <li role="presentation" class="active"><a href="/templates">Templates</a></li>
-				  <li role="presentation"><a href="/emails">Emails</a></li>
-				  <li role="presentation"><a href="/recipients">Recipients</a></li>
-				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation"><a href="/userhome">Home</a></li>
+				  <li role="presentation" class="active"><a href="/createLists">Create Lists</a></li>
+				  <li role="presentation"><a href="/addNewCompany">Add new company</a></li>
 				  <li role="presentation"><a href="/users">Users</a></li>
-				  <li role="presentation"><a href="reports">Reports</a></li>
 				</ul>
 			</div>
 		</div>
@@ -98,19 +108,16 @@
 	</div>
 </template>
 
-<template name="emails">
+<template name="addNewCompany">
 	<div class="container">
 		{{> header}}
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="nav nav-tabs">
-				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
-				  <li role="presentation"><a href="/templates">Templates</a></li>
-				  <li role="presentation" class="active"><a href="/emails">Emails</a></li>
-				  <li role="presentation"><a href="/recipients">Recipients</a></li>
-				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation"><a href="/userhome">Home</a></li>
+				  <li role="presentation"><a href="/createLists">Create Lists</a></li>
+				  <li role="presentation" class="active"><a href="/addNewCompany">Add new company</a></li>
 				  <li role="presentation"><a href="/users">Users</a></li>
-				  <li role="presentation"><a href="reports">Reports</a></li>
 				</ul>
 			</div>
 		</div>
@@ -121,56 +128,6 @@
 		</div>
 	</div>
 </template>
-
-<template name="recipients">
-	<div class="container">
-		{{> header}}
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="nav nav-tabs">
-				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
-				  <li role="presentation"><a href="/templates">Templates</a></li>
-				  <li role="presentation"><a href="/emails">Emails</a></li>
-				  <li role="presentation" class="active"><a href="/recipients">Recipients</a></li>
-				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
-				  <li role="presentation"><a href="/users">Users</a></li>
-				  <li role="presentation"><a href="reports">Reports</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="row main">
-			<div class="col-md-12">
-				<h1>Under Construction</h1>
-			</div>
-		</div>
-	</div>
-</template>
-
-
-<template name="campaigns">
-	<div class="container">
-		{{> header}}
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="nav nav-tabs">
-				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
-				  <li role="presentation"><a href="/templates">Templates</a></li>
-				  <li role="presentation"><a href="/emails">Emails</a></li>
-				  <li role="presentation"><a href="/recipients">Recipients</a></li>
-				  <li role="presentation" class="active"><a href="/campaigns">Campaigns</a></li>
-				  <li role="presentation"><a href="/users">Users</a></li>
-				  <li role="presentation"><a href="reports">Reports</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="row main">
-			<div class="col-md-12">
-				<h1>Under Construction</h1>
-			</div>
-		</div>
-	</div>
-</template>
-
 
 
 <template name="user_list">
@@ -179,13 +136,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="nav nav-tabs">
-				  <li role="presentation"><a href="/userhome">Dashboard</a></li>
-				  <li role="presentation"><a href="/templates">Templates</a></li>
-				  <li role="presentation"><a href="/emails">Emails</a></li>
-				  <li role="presentation"><a href="/recipients">Recipients</a></li>
-				  <li role="presentation"><a href="/campaigns">Campaigns</a></li>
+				  <li role="presentation"><a href="/userhome">Home</a></li>
+				  <li role="presentation"><a href="/createLists">Create Lists</a></li>
+				  <li role="presentation"><a href="/addNewCompany">Add new company</a></li>
 				  <li role="presentation" class="active"><a href="/users">Users</a></li>
-				  <li role="presentation"><a href="reports">Reports</a></li>
 				</ul>
 			</div>
 		</div>
