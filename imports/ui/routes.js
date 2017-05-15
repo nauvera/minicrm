@@ -32,9 +32,17 @@ Router.route('/addNewCompany', function () {
 
 Router.route('/users', function () {
   if (!Meteor.userId()) {
-	this.render('home');
+  this.render('home');
   } else {
-	Meteor.subscribe('allusers');
-	this.render('user_list');
+  Meteor.subscribe('allusers');
+  this.render('user_list');
+  }
+});
+
+Router.route('/reports', function () {
+  if (!Meteor.userId()) {
+  this.render('home');
+  } else {
+  this.render('reports');
   }
 });
