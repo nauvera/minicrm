@@ -30,6 +30,14 @@ Router.route('/addNewCompany', function () {
   }
 });
 
+Router.route('/sendOuts', function () {
+  if (!Meteor.userId()) {
+	this.render('home');
+  } else {
+	this.render('sendOuts');
+  }
+});
+
 Router.route('/users', function () {
   if (!Meteor.userId()) {
   this.render('home');

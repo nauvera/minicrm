@@ -39,6 +39,7 @@
 				  <li role="presentation" class="active"><a href="/userhome">Home</a></li>
 				  <li role="presentation"><a href="/createLists">Create Lists</a></li>
 				  <li role="presentation"><a href="/addNewCompany">Add new company</a></li>
+				  <li role="presentation"><a href="/sendOuts">Send outs</a></li>
 				  <li role="presentation"><a href="/users">Users</a></li>
 				</ul>
 			</div>
@@ -47,11 +48,8 @@
 			<div class="col-md-12 bodycontainer scrollable">
 				<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 					<thead>
-						<tr><th>Name</th><th>Telephone</th><th>Email</th><th>Industry</th><th>Status</th><th>Contact</th><th>select</th></tr>
+						<tr><th>Name</th><th>Telephone</th><th>Email</th><th>Industry</th><th>Contact</th><th>Status</th><th><input type="checkbox" class="companyChBxAll"></th></tr>
 					</thead>
-					<tfoot>
-						<tr><th>Name</th><th>Telephone</th><th>Email</th><th>Industry</th><th>Status</th><th>Contact</th><th>select</th></tr>
-					</tfoot>
 					<tbody>
 						{{> companies}}
 					</tbody>
@@ -63,7 +61,7 @@
 					<a class="btn btn-primary" href="/addNewCompany?origin=userhome" role="button">Add Company</a>				
 				</div>
 				<div class="col-md-2">
-					<a class="btn btn-danger" href="#" role="button">Delete</a>				
+					<a class="btn btn-danger deleteCompanies" href="#" role="button">Delete</a>				
 				</div>
 				<div class="col-md-8">
 				</div>
@@ -83,7 +81,7 @@
 
 <template name="companies">
 	{{#each allCompanies}}
-		<tr><td>{{name}}</td><td>{{telephone}}</td><td>{{email}}</td><td>{{industry}}</td><td>{{status}}</td><td>{{contact}}</td><td><input type="checkbox"></td></tr>
+		<tr><td>{{name}}</td><td>{{telephone}}</td><td>{{email}}</td><td>{{industry}}</td><td>{{status}}</td><td>{{contact}}</td><td><input type="checkbox" class="companyChBx" companyId="{{_id}}"></td></tr>
 	{{/each}}
 </template>
 
@@ -96,6 +94,7 @@
 				  <li role="presentation"><a href="/userhome">Home</a></li>
 				  <li role="presentation" class="active"><a href="/createLists">Create Lists</a></li>
 				  <li role="presentation"><a href="/addNewCompany">Add new company</a></li>
+				  <li role="presentation"><a href="/sendOuts">Send outs</a></li>
 				  <li role="presentation"><a href="/users">Users</a></li>
 				</ul>
 			</div>
@@ -117,6 +116,7 @@
 				  <li role="presentation"><a href="/userhome">Home</a></li>
 				  <li role="presentation"><a href="/createLists">Create Lists</a></li>
 				  <li role="presentation" class="active"><a href="/addNewCompany">Add new company</a></li>
+				  <li role="presentation"><a href="/sendOuts">Send outs</a></li>
 				  <li role="presentation"><a href="/users">Users</a></li>
 				</ul>
 			</div>
@@ -124,6 +124,69 @@
 		<div class="row main">
 			<div class="col-md-12">
 				<h1>Under Construction</h1>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="sendOuts">
+	<div class="container">
+		{{> header}}
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+				  <li role="presentation"><a href="/userhome">Home</a></li>
+				  <li role="presentation"><a href="/createLists">Create Lists</a></li>
+				  <li role="presentation"><a href="/addNewCompany">Add new company</a></li>
+				  <li role="presentation" class="active"><a href="/sendOuts">Send outs</a></li>
+				  <li role="presentation"><a href="/users">Users</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" style="padding-bottom: 5px; padding-top: 15px">
+			<div class="col-md-2">
+				Delivery: 
+			</div>
+			<div class="col-md-1">
+				<select class="selectpicker" title="Choose one of the following...">
+				  <option></option>
+				  <option>Mustard</option>
+				  <option>Ketchup</option>
+				  <option>Relish</option>
+				</select>
+			</div>
+		</div>
+		<div class="row" style="padding-bottom: 5px;">
+			<div class="col-md-2">
+				Company List: 
+			</div>
+			<div class="col-md-1">
+				<select class="selectpicker" title="Choose one of the following...">
+				  <option></option>
+				  <option>Mustard</option>
+				  <option>Ketchup</option>
+				  <option>Relish</option>
+				</select>
+			</div>
+		</div>
+		<div class="row" style="padding-bottom: 5px;">
+			<div class="col-md-2">
+				Proof email: 
+			</div>
+			<div class="col-md-2">
+				<input type="text"/>
+			</div>
+		</div>
+		<div class="row" style="padding-bottom: 5px;">
+			<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-5">
+						<a href="#" class="btn btn-primary sendProof">Send Proof</a>
+					</div>
+					<div class="col-md-2">
+						<a href="#" class="btn btn-primary sendOut">Send</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

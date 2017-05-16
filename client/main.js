@@ -83,24 +83,43 @@ Template.menu.helpers({
 });
 
 Template.companies.onCreated(function() {
-	alert("Sorter");
 	$('#example').tablesorter();
 });
 
 
 Template.userhome.events({
 	'click .readFromFile': function(event) {
-			event.preventDefault();
-			Meteor.call("loadFile", function(error, result) {
-				if (error) {
-					alert(error);
-				} else {
-					alert("File loaded successfully");
-				}
-			});
+		event.preventDefault();
+		Meteor.call("loadFile", function(error, result) {
+			if (error) {
+				alert(error);
+			} else {
+				alert("File loaded successfully");
+			}
+		});
+	},
+	'click .deleteCompanies': function(event) {
+		event.preventDefault();
+		if ($("input:checked.companyChBx").length > 0) {
+			if (confirm("Are you sure to delete " + $("input:checked.companyChBx").length + " compan(y)(ies)?") === true) {
+				$.each($("input:checked.companyChBx"), function(i, cb) {
+					var companyId = $(this).attr("companyId");
+					if (companyId) {
+						companyCollection.remove(companyId);
+					}
+				});
+			}
+			$(".companyChBxAll").prop("checked", false);
+		}
+	},
+	'click .companyChBxAll': function(e) {
+		if ($(e.target).is(":checked")) {
+			$(".companyChBx").prop("checked", true);
+		} else {
+			$(".companyChBx").prop("checked", false);
 		}
 	}
-);
+});
 
 Template.companies.helpers({
 	allCompanies: function() {
@@ -113,5 +132,17 @@ Template.companies.helpers({
 			});
 		}
 		return companies;
+	}
+});
+
+Template.sendOuts.events({
+	'click .sendProof': function() {
+		Meteor.call("sendProofEmail", function(error, result) {
+			if (error) {
+				alert(error);
+			} else {
+				alert("Proof email sent");
+			}
+		});
 	}
 });

@@ -5,6 +5,13 @@ companyCollection = new Mongo.Collection("company");
 Meteor.startup(() => {
   // code to run on server at startup
 	console.log("Hello World =========>>>>>>>>>>>>>");
+	process.env.MAIL_URL="smtp://postmaster%40sandbox43391c7c48a14e6da3ebb41c8dc5099b.mailgun.org:56899d4023c7a0170dcbe63f0104fcfc@smtp.mailgun.org:587";
+	
+	//SSR.compileTemplate("emailTemplate1", "");
+	SSR.compileTemplate("emailTemplate1", Assets.getText('emailTemplate1.tmpl'));
+	
+	
+	
 	Meteor.publish("allusers",
 		function () {
 				return Meteor.users.find({}, {fields: {createdAt: 1, _id: 1, emails: 1}}
@@ -53,6 +60,11 @@ Meteor.startup(() => {
 					console.log("Company with email: " + company.email + " is created");
 				}
 			}
+		},
+		
+		sendProofEmail: function() {
+			console.log("Sending proof email");
+			Email.send({to:'nauvera@gmail.com', from:'admin@minicrm.com', subject:'Thank you for signing up for our project', html:SSR.render('emailTemplate1', {company:'Abbot', contact:'Nauvera Rehman', industry:'HR'}), text:'test'});
 		}
 	});	
 });

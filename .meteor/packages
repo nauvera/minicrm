@@ -23,3 +23,5 @@ accounts-password
 twbs:bootstrap
 andrei:tablesorter
 harrison:papa-parse
+email
+meteorhacks:ssr
